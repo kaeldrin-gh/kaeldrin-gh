@@ -28,7 +28,7 @@ Dutch power-price and weather warehouse.
 
 ## [databricks-energy-quality](https://github.com/kaeldrin-gh/databricks-energy-quality)
 
-Data-quality monitoring lakehouse on Databricks Free Edition.
+Data-quality monitoring lakehouse on Databricks.
 
 `Python · SQL · Unity Catalog · Delta Lake · Lakeflow pipelines · Workflows · Declarative Automation Bundles`
 
