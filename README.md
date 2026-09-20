@@ -14,7 +14,7 @@ Streaming lakehouse for German day-ahead power prices.
 - Kafka → Spark → Iceberg with revision-aware MERGE ingestion and a dead-letter queue
 - Airflow orchestration, freshness SLA checks, operations runbook
 - 2,328 hours of real market data analyzed (duck curve, negative-price patterns)
-- Live: https://kaeldrin-gh.github.io/de-energy-streaming/
+- Live showcase: [de-energy-streaming](https://kaeldrin-gh.github.io/de-energy-streaming/)
 
 ## [nl-energy-warehouse](https://github.com/kaeldrin-gh/nl-energy-warehouse)
 
@@ -24,7 +24,7 @@ Dutch power-price and weather warehouse.
 
 - 58,500+ delivery hours with incremental dbt models and revision-aware reprocessing
 - Quality tests (uniqueness, exchange limits, cross-source alignment), built on PostgreSQL 17 in CI
-- Live report: https://kaeldrin-gh.github.io/nl-energy-warehouse/report.html
+- Live report: [nl-energy-warehouse](https://kaeldrin-gh.github.io/nl-energy-warehouse/report.html)
 
 ## [databricks-energy-quality](https://github.com/kaeldrin-gh/databricks-energy-quality)
 
@@ -35,6 +35,7 @@ Data-quality monitoring lakehouse on Databricks Free Edition.
 - Medallion lakehouse with pipeline expectations and revision-aware dedupe
 - Three-task workflow whose quality checks fail the job when data is unhealthy
 - Everything deployed as code, dashboard included
+- Screenshots and architecture: [databricks-energy-quality README](https://github.com/kaeldrin-gh/databricks-energy-quality#what-it-looks-like)
 
 ## How they fit together
 
