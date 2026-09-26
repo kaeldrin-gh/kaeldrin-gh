@@ -20,10 +20,10 @@ Streaming lakehouse for German day-ahead power prices.
 
 Dutch power-price and weather warehouse.
 
-`Python · SQL · dbt · DuckDB · PostgreSQL · Power BI · GitHub Actions`
+`Python · SQL · dbt · DuckDB · PostgreSQL · Power BI · GitHub Actions · FastAPI`
 
 - 58,500+ delivery hours with incremental dbt models and revision-aware reprocessing
-- Quality tests (uniqueness, exchange limits, cross-source alignment), built on PostgreSQL 17 in CI
+- Model contracts, SCD2 revision snapshots and quality tests (uniqueness, exchange limits, cross-source alignment), built on PostgreSQL 17 in CI
 - Live report: [nl-energy-warehouse](https://kaeldrin-gh.github.io/nl-energy-warehouse/report.html)
 
 ## [databricks-energy-quality](https://github.com/kaeldrin-gh/databricks-energy-quality)
