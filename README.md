@@ -13,7 +13,7 @@ Streaming lakehouse for German day-ahead power prices.
 
 - Kafka → Spark → Iceberg with revision-aware MERGE ingestion and a dead-letter queue
 - Airflow orchestration, freshness SLA checks, daily Iceberg compaction and snapshot expiry, operations runbook
-- 2,328 hours of real market data analyzed (duck curve, negative-price patterns)
+- 2,712 hours of real market data analyzed (duck curve, negative-price patterns)
 - Live showcase: [de-energy-streaming](https://kaeldrin-gh.github.io/de-energy-streaming/)
 
 ## [nl-energy-warehouse](https://github.com/kaeldrin-gh/nl-energy-warehouse)
