@@ -12,7 +12,7 @@ Streaming lakehouse for German day-ahead power prices.
 `Python · PySpark · Spark Structured Streaming · Kafka · Apache Iceberg · Airflow · PostgreSQL · Grafana · Terraform · Docker · GitHub Actions`
 
 - Kafka → Spark → Iceberg with revision-aware MERGE ingestion and a dead-letter queue
-- Airflow orchestration, freshness SLA checks, operations runbook
+- Airflow orchestration, freshness SLA checks, daily Iceberg compaction and snapshot expiry, operations runbook
 - 2,328 hours of real market data analyzed (duck curve, negative-price patterns)
 - Live showcase: [de-energy-streaming](https://kaeldrin-gh.github.io/de-energy-streaming/)
 
