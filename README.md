@@ -9,7 +9,7 @@ all of them are CI-tested.
 
 Streaming lakehouse for German day-ahead power prices.
 
-`Python · PySpark · Spark Structured Streaming · Kafka · Apache Iceberg · Airflow · PostgreSQL · Grafana · Terraform · Docker`
+`Python · PySpark · Spark Structured Streaming · Kafka · Apache Iceberg · Airflow · PostgreSQL · Grafana · Terraform · Docker · GitHub Actions`
 
 - Kafka → Spark → Iceberg with revision-aware MERGE ingestion and a dead-letter queue
 - Airflow orchestration, freshness SLA checks, operations runbook
@@ -23,18 +23,20 @@ Dutch power-price and weather warehouse.
 `Python · SQL · dbt · DuckDB · PostgreSQL · Power BI · GitHub Actions · FastAPI`
 
 - 58,500+ delivery hours with incremental dbt models and revision-aware reprocessing
-- Model contracts, SCD2 revision snapshots and quality tests (uniqueness, exchange limits, cross-source alignment), built on PostgreSQL 17 in CI
+- Model contracts, SCD2 revision snapshots and quality tests (uniqueness, exchange limits, cross-source alignment), validated on DuckDB and PostgreSQL 17 in CI
+- dbt Semantic Layer metrics and a read-only FastAPI service over the marts
 - Live report: [nl-energy-warehouse](https://kaeldrin-gh.github.io/nl-energy-warehouse/report.html)
 
 ## [databricks-energy-quality](https://github.com/kaeldrin-gh/databricks-energy-quality)
 
 Data-quality monitoring lakehouse on Databricks.
 
-`Python · SQL · Unity Catalog · Delta Lake · Lakeflow pipelines · Workflows · Declarative Automation Bundles`
+`Python · PySpark · SQL · Unity Catalog · Delta Lake · Lakeflow pipelines · Workflows · Declarative Automation Bundles · GitHub Actions`
 
 - Medallion lakehouse with pipeline expectations and revision-aware dedupe
 - Three-task workflow whose quality checks fail the job when data is unhealthy
 - Everything deployed as code, dashboard included
+- CI/CD in GitHub Actions: tests, bundle validate, deploy and dashboard publish on every push to main; the ingest task retries before failing
 - Screenshots and architecture: [databricks-energy-quality README](https://github.com/kaeldrin-gh/databricks-energy-quality#what-it-looks-like)
 
 ## How they fit together
