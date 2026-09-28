@@ -22,7 +22,7 @@ Dutch power-price and weather warehouse.
 
 `Python · SQL · dbt · DuckDB · PostgreSQL · Power BI · GitHub Actions · FastAPI`
 
-- 58,500+ delivery hours with incremental dbt models and revision-aware reprocessing
+- 58,000+ delivery hours (since January 2020) with incremental dbt models and revision-aware reprocessing
 - Model contracts, SCD2 revision snapshots and quality tests (uniqueness, exchange limits, cross-source alignment), validated on DuckDB and PostgreSQL 17 in CI
 - dbt Semantic Layer metrics and a read-only FastAPI service over the marts
 - Live report: [nl-energy-warehouse](https://kaeldrin-gh.github.io/nl-energy-warehouse/report.html)
