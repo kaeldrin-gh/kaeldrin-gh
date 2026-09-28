@@ -1,9 +1,20 @@
 # Data engineering portfolio
 
 Four independent, open-source projects covering the data engineering stack:
-change data capture into a cloud warehouse, streaming ingestion, batch
+streaming ingestion, change data capture into a cloud warehouse, batch
 warehouse modeling, and a managed lakehouse with data-quality monitoring. All
 of them run free - locally or on free tiers - and all of them are CI-tested.
+
+## [de-energy-streaming](https://github.com/kaeldrin-gh/de-energy-streaming)
+
+Streaming lakehouse for German day-ahead power prices.
+
+`Python · PySpark · Spark Structured Streaming · Kafka · Apache Iceberg · Airflow · PostgreSQL · Grafana · Terraform · Docker · GitHub Actions`
+
+- Kafka → Spark → Iceberg with revision-aware MERGE ingestion and a dead-letter queue
+- Airflow orchestration, freshness SLA checks, daily Iceberg compaction and snapshot expiry, operations runbook
+- 2,712 hours of real market data analyzed (duck curve, negative-price patterns)
+- Live showcase: [de-energy-streaming](https://kaeldrin-gh.github.io/de-energy-streaming/)
 
 ## [nl-parliament-warehouse](https://github.com/kaeldrin-gh/nl-parliament-warehouse)
 
@@ -16,17 +27,6 @@ Dutch House of Representatives votes, from the parliament's own change feed.
 - dbt dimensional model (votes, decisions, cases, party membership over time) with enforced contracts, 108 data tests and a unit test, on DuckDB in CI and BigQuery daily
 - Terraform and keyless GitHub Actions access through Workload Identity Federation
 - Live report: [nl-parliament-warehouse](https://kaeldrin-gh.github.io/nl-parliament-warehouse/)
-
-## [de-energy-streaming](https://github.com/kaeldrin-gh/de-energy-streaming)
-
-Streaming lakehouse for German day-ahead power prices.
-
-`Python · PySpark · Spark Structured Streaming · Kafka · Apache Iceberg · Airflow · PostgreSQL · Grafana · Terraform · Docker · GitHub Actions`
-
-- Kafka → Spark → Iceberg with revision-aware MERGE ingestion and a dead-letter queue
-- Airflow orchestration, freshness SLA checks, daily Iceberg compaction and snapshot expiry, operations runbook
-- 2,712 hours of real market data analyzed (duck curve, negative-price patterns)
-- Live showcase: [de-energy-streaming](https://kaeldrin-gh.github.io/de-energy-streaming/)
 
 ## [nl-energy-warehouse](https://github.com/kaeldrin-gh/nl-energy-warehouse)
 
@@ -53,7 +53,7 @@ Data-quality monitoring lakehouse on Databricks.
 
 ## How they fit together
 
-- Four platforms: a cloud warehouse (BigQuery), self-hosted streaming, local
+- Four platforms: self-hosted streaming, a cloud warehouse (BigQuery), local
   batch analytics engineering, and a managed lakehouse
 - The same correctness idea everywhere: idempotent ingestion, one row per
   entity version, newest revision wins
