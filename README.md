@@ -1,9 +1,22 @@
 # Data engineering portfolio
 
-Four independent, open-source projects covering the data engineering stack:
-streaming ingestion, change data capture into a cloud warehouse, batch
-warehouse modeling, and a managed lakehouse with data-quality monitoring. All
-of them run free - locally or on free tiers - and all of them are CI-tested.
+Five independent, open-source projects covering the data engineering stack:
+a serverless data mesh on AWS, streaming ingestion, change data capture into a
+cloud warehouse, batch warehouse modeling, and a managed lakehouse with
+data-quality monitoring. All of them run free - locally or on free tiers - and
+all of them are CI-tested.
+
+## [polymer-research-lakehouse](https://github.com/kaeldrin-gh/polymer-research-lakehouse)
+
+Data mesh on AWS for polymer research and industrial emissions.
+
+`Python · PySpark · SQL · AWS CDK · S3 · Apache Iceberg · Glue · Athena · Lambda · Step Functions · ECS Fargate · Lake Formation · dbt · Docker · GitHub Actions`
+
+- Research and sustainability domains that own their buckets, catalogs, loads and data products; a shared product joins them
+- Incremental Iceberg MERGE from the 707 GB OpenAlex snapshot that scans 8% of it (859,181 works), plus a daily API feed
+- SCD Type 2 over European Environment Agency releases in a Glue PySpark job; dbt with enforced contracts on ECS Fargate
+- Lake Formation tag-based access, keyless GitHub OIDC deploys, cdk-nag, and a scoped CloudFormation execution policy
+- Live report: [polymer-research-lakehouse](https://kaeldrin-gh.github.io/polymer-research-lakehouse/)
 
 ## [de-energy-streaming](https://github.com/kaeldrin-gh/de-energy-streaming)
 
@@ -53,9 +66,10 @@ Data-quality monitoring lakehouse on Databricks.
 
 ## How they fit together
 
-- Four platforms: self-hosted streaming, a cloud warehouse (BigQuery), local
-  batch analytics engineering, and a managed lakehouse
+- Five platforms: serverless AWS, self-hosted streaming, a cloud warehouse
+  (BigQuery), local batch analytics engineering, and a managed lakehouse
 - The same correctness idea everywhere: idempotent ingestion, one row per
   entity version, newest revision wins
-- Real public data from the Netherlands and Germany: power markets and parliament
+- Real public data: Dutch and German power markets, the Dutch parliament, and
+  European research and industrial emissions
 - MIT-licensed, no paid services, CI on every push
