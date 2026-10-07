@@ -1,9 +1,9 @@
 # Data engineering portfolio
 
 Five independent, open-source projects covering the data engineering stack:
-a serverless data mesh on AWS, streaming ingestion, change data capture into a
-cloud warehouse, batch warehouse modeling, and a managed lakehouse with
-data-quality monitoring. All of them run free - locally or on free tiers - and
+a serverless data mesh on AWS, streaming ingestion, batch warehouse modeling,
+a managed lakehouse with data-quality monitoring, and change data capture into
+a cloud warehouse. All of them run free - locally or on free tiers - and
 all of them are CI-tested.
 
 ## [polymer-research-lakehouse](https://github.com/kaeldrin-gh/polymer-research-lakehouse)
@@ -29,18 +29,6 @@ Streaming lakehouse for German day-ahead power prices.
 - 2,712 hours of real market data analyzed (duck curve, negative-price patterns)
 - Live showcase: [de-energy-streaming](https://kaeldrin-gh.github.io/de-energy-streaming/)
 
-## [nl-parliament-warehouse](https://github.com/kaeldrin-gh/nl-parliament-warehouse)
-
-Dutch House of Representatives votes, from the parliament's own change feed.
-
-`Python · SQL · BigQuery · dbt · DuckDB · Terraform · GitHub Actions`
-
-- Change data capture from a public change feed: checkpoints, tombstones, and a snapshot bootstrap that loses nothing between snapshot and feed
-- Append-only raw layer on the BigQuery sandbox (no DML, 60-day table expiry, lifetime storage quota) with renewal and a storage ledger
-- dbt dimensional model (votes, decisions, cases, party membership over time) with enforced contracts, 108 data tests and a unit test, on DuckDB in CI and BigQuery daily
-- Terraform and keyless GitHub Actions access through Workload Identity Federation
-- Live report: [nl-parliament-warehouse](https://kaeldrin-gh.github.io/nl-parliament-warehouse/)
-
 ## [nl-energy-warehouse](https://github.com/kaeldrin-gh/nl-energy-warehouse)
 
 Dutch power-price and weather warehouse.
@@ -64,10 +52,22 @@ Data-quality monitoring lakehouse on Databricks.
 - CI/CD in GitHub Actions: tests, bundle validate, deploy and dashboard publish on every push to main; the ingest task retries before failing
 - Screenshots and architecture: [databricks-energy-quality README](https://github.com/kaeldrin-gh/databricks-energy-quality#what-it-looks-like)
 
+## [nl-parliament-warehouse](https://github.com/kaeldrin-gh/nl-parliament-warehouse)
+
+Dutch House of Representatives votes, from the parliament's own change feed.
+
+`Python · SQL · BigQuery · dbt · DuckDB · Terraform · GitHub Actions`
+
+- Change data capture from a public change feed: checkpoints, tombstones, and a snapshot bootstrap that loses nothing between snapshot and feed
+- Append-only raw layer on the BigQuery sandbox (no DML, 60-day table expiry, lifetime storage quota) with renewal and a storage ledger
+- dbt dimensional model (votes, decisions, cases, party membership over time) with enforced contracts, 108 data tests and a unit test, on DuckDB in CI and BigQuery daily
+- Terraform and keyless GitHub Actions access through Workload Identity Federation
+- Live report: [nl-parliament-warehouse](https://kaeldrin-gh.github.io/nl-parliament-warehouse/)
+
 ## How they fit together
 
-- Five platforms: serverless AWS, self-hosted streaming, a cloud warehouse
-  (BigQuery), local batch analytics engineering, and a managed lakehouse
+- Five platforms: serverless AWS, self-hosted streaming, local batch analytics
+  engineering, a managed lakehouse, and a cloud warehouse (BigQuery)
 - The same correctness idea everywhere: idempotent ingestion, one row per
   entity version, newest revision wins
 - Real public data: Dutch and German power markets, the Dutch parliament, and
